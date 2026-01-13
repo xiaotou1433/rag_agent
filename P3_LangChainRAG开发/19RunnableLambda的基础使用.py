@@ -1,7 +1,6 @@
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
 from langchain_community.chat_models.tongyi import ChatTongyi
-from langchain_core.runnables import RunnableLambda
 
 model = ChatTongyi(model="qwen3-max")
 str_parser = StrOutputParser()
