@@ -26,7 +26,7 @@ vector_store.delete(["id1", "id2"])
 
 # 检索 返回类型list[Document]
 result = vector_store.similarity_search(
-    "Python是不是简单易学呀",
+    "瑞达法",
     3       # 检索的结果要几个
 )
 
