@@ -1,14 +1,19 @@
-from langchain_core.prompts import PromptTemplate
-from langchain_community.chat_models.tongyi import ChatTongyi
-from langchain_core.messages import AIMessage
+from langchain_community.document_loaders import TextLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from langchain_core.output_parsers import StrOutputParser
-model = ChatTongyi(model="qwen3-max")
+loader = TextLoader(
+    "../P3_LangChainRAG开发/data/Python基础语法.txt",
+    encoding="utf-8",
+)
+docs = loader.load()
 
-prompt = PromptTemplate.from_template(
-    "我邻居姓：{lastname}, 刚生了{gender}，请起名，仅告知名字无需其它内容"
+splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,     # 分段的最大字符数
+    chunk_overlap=50,   # 分段之间允许重叠的字符数
+    # 文本分段依据
+    separators=["\n\n", "\n", "。", "！", "？", ".", "!", "?", " ", ""],
+    # 字符统计依据（函数）
+    length_function=len,
 )
 
-chain = prompt | model | model
-res = chain.invoke({"lastname": "张", "gender": "女儿"})
-print(res.content)
+split_docs = splitter.split_documents(docs)
