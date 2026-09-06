@@ -12,14 +12,3 @@
 | [P4_RAG项目案例](P4_RAG项目案例) | 综合项目 | 完整的 RAG 知识库问答应用（含文件上传、问答界面） |
 | [P5_Agent智能体](P5_Agent智能体) | Agent 开发 | Agent 初体验、流式输出、ReAct 案例、中间件 |
 
-## 👤 关于我
-
-大家好，我是 **xiaotou1433**，一名 AI 学习者。
-
-我正在系统学习大模型应用开发方向，从基础 API 调用到 LangChain、RAG 知识库问答、再到 Agent 智能体的完整技术栈。本仓库记录了我的学习实践过程，我会持续更新和补充自己的练习代码。
-
-欢迎交流指正，一起在 AI 的路上进步 💪
-
-## 📌 说明
-
-本仓库学习代码源自 Gitee 项目 [javacaoyu/rag_agent](https://gitee.com/javacaoyu/rag_agent)，在此感谢原作者的分享。
